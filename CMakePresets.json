@@ -1,0 +1,56 @@
+{
+  "version": 6,
+  "cmakeMinimumRequired": { "major": 3, "minor": 28, "patch": 0 },
+  "configurePresets": [
+    {
+      "name": "clang-debug",
+      "displayName": "Clang Debug (variant 4)",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/clang-debug",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "CMAKE_CXX_COMPILER": "clang++",
+        "PRAC6_VARIANT": "4"
+      }
+    },
+    {
+      "name": "clang-debug-v14",
+      "displayName": "Clang Debug (variant 14)",
+      "inherits": "clang-debug",
+      "binaryDir": "${sourceDir}/build/clang-debug-v14",
+      "cacheVariables": { "PRAC6_VARIANT": "14" }
+    },
+    {
+      "name": "gcc-debug",
+      "displayName": "GCC Debug (variant 4)",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/gcc-debug",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "CMAKE_CXX_COMPILER": "g++",
+        "PRAC6_VARIANT": "4"
+      }
+    },
+    {
+      "name": "gcc-debug-v14",
+      "displayName": "GCC Debug (variant 14)",
+      "inherits": "gcc-debug",
+      "binaryDir": "${sourceDir}/build/gcc-debug-v14",
+      "cacheVariables": { "PRAC6_VARIANT": "14" }
+    },
+    {
+      "name": "release",
+      "displayName": "Release (variant 4)",
+      "inherits": "clang-debug",
+      "binaryDir": "${sourceDir}/build/release",
+      "cacheVariables": { "CMAKE_BUILD_TYPE": "Release" }
+    }
+  ],
+  "buildPresets": [
+    { "name": "clang-debug", "configurePreset": "clang-debug" },
+    { "name": "clang-debug-v14", "configurePreset": "clang-debug-v14" },
+    { "name": "gcc-debug", "configurePreset": "gcc-debug" },
+    { "name": "gcc-debug-v14", "configurePreset": "gcc-debug-v14" },
+    { "name": "release", "configurePreset": "release" }
+  ]
+}

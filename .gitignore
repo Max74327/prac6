@@ -1,0 +1,56 @@
+.nvim.lua
+# --- Сборка (CMake) ---
+build/
+cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+compile_commands.json
+*.ninja
+.ninja_deps
+.ninja_log
+
+# --- Артефакты компиляции ---
+*.o
+*.obj
+*.a
+*.so
+*.dylib
+*.exe
+*.out
+*.pcm
+*.gcm
+*.pch
+*.mod
+*.modmap
+*.d
+
+# --- Тестовые данные (генерируются gen) ---
+data/
+*.bin
+
+# --- IDE / редакторы ---
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.clangd/
+.cache/
+
+# --- OS ---
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Отчёты / артефакты практической ---
+*.pdf
+*.docx
+*.odt
+!docs/*.pdf
+
+# --- Временные ---
+*.tmp
+*.bak
+*.orig
+*.rej
